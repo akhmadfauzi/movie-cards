@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import '../styles/App.css';
+import '../styles/app.css';
 import NowPlaying from './NowPlaying';
+import Discover from './Discover';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-		<h1>Movie Cards</h1>
+      <div className="app">
 		<NowPlaying></NowPlaying>
+		<Discover></Discover>
       </div>
     );
   }

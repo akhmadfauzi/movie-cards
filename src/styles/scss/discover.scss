@@ -1,0 +1,56 @@
+@import 'colors';
+
+/*
+	@media (max-width: 575.98px) {  }
+
+	// Small devices (landscape phones, less than 768px)
+	@media (max-width: 767.98px) {  }
+
+	// Medium devices (tablets, less than 992px)
+	@media (max-width: 991.98px) {  }
+
+	// Large devices (desktops, less than 1200px)
+	@media (max-width: 1199.98px) {  }
+*/
+
+
+.discover{
+	width: 100%;
+	height: auto;
+	&__header{
+		height: 100px;
+		overflow: hidden;
+		color:#fff;
+		& > div{
+			display: inline-block;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li{
+				display: inline-block;
+			}
+		}
+	}
+	&__content{
+
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		background: $secondaryNavy;
+		padding: 20px 0;
+		
+		&__movie{
+			font-family: 'Roboto',sans-serif;
+			color:#fff;
+			width: 215px;
+			margin:10px 20px;
+			overflow: hidden;
+		}
+	}
+}

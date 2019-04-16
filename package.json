@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sassify": "sass --watch ./src/styles/scss/app.scss:./src/styles/app.css ./src/styles/scss/now-playing.scss:./src/styles/now-playing.css ./src/styles/scss/discover.scss:./src/styles/discover.css"
   },
   "eslintConfig": {
     "extends": "react-app"

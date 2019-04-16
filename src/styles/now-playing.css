@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial|Roboto");
+.now-playing {
+  width: 100%;
+  height: 400px;
+  padding: 25px 0;
+  background: #0B1022;
+}
+.now-playing__content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+.now-playing__movie {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  width: 215px;
+  margin: 10px 20px;
+  overflow: hidden;
+}
+.now-playing__movie-header img {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  max-width: 215px;
+  width: auto;
+}
+.now-playing__movie-content {
+  display: block;
+  height: 70px;
+  overflow: hidden;
+}
+.now-playing__movie-content > h1 {
+  font-size: 1em !important;
+  margin: 3px 0;
+  padding: 0;
+  font-weight: normal;
+  display: block;
+}
+.now-playing__movie-content > span {
+  font-size: 0.9em;
+  font-weight: normal;
+  display: block;
+  margin: 5px 0;
+  color: #3CB15A;
+}
+
+/*# sourceMappingURL=now-playing.css.map */
