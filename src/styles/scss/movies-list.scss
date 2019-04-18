@@ -1,0 +1,11 @@
+@import 'colors';
+@import 'mediaQueries';
+.movies-list{
+	@include tablet{
+		&__content{
+			margin:0 auto;
+			width: 666px;
+			overflow: hidden;
+		}
+	}
+}

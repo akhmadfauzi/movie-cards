@@ -1,7 +1,21 @@
 @import 'colors';
+@import 'mediaQueries';
+
 .movie-item{
 	&:first-child{
 		margin-top:15px;
+	}
+	@include tablet{
+		
+		&:first-child{
+			margin:0;
+		}
+
+		width: 200px;
+		padding: 10px;
+		float: left;
+		height: 450px;
+		margin: 15px 0 0 0 !important;
 	}
 	width: 90%;
 	padding: 5%;
@@ -20,6 +34,10 @@
 	}
 
 	&__content{
+		@include tablet{
+			height: 166px;
+			overflow: hidden;
+		}
 		background: #fff;
 		height: auto;
 		width: 80%;		
@@ -40,6 +58,7 @@
 			padding: 0;
 			margin: 5px 0;
 			i {
+				font-size: .7em;
 				color: $yellow;
 			}
 		}

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"movies-list.css"}
+{"version":3,"sourceRoot":"","sources":["scss/_colors.scss","scss/_mediaQueries.scss","scss/movies-list.scss"],"names":[],"mappings":"AAAQ;ACYN;ECRA;IACC;IACA;IACA","file":"movies-list.css"}

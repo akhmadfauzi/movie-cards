@@ -1,3 +1,10 @@
-
+@import url("https://fonts.googleapis.com/css?family=Questrial|Roboto");
+@media only screen and (min-width: 768px) {
+  .movies-list__content {
+    margin: 0 auto;
+    width: 666px;
+    overflow: hidden;
+  }
+}
 
 /*# sourceMappingURL=movies-list.css.map */

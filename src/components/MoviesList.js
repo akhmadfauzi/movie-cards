@@ -18,7 +18,7 @@ class MoviesList extends Component {
 
 	movies() {
 		let list = [];
-		list = this.props.movies.slice(0, 5).map((movie, i) => {
+		list = this.props.movies.slice(0, 10).map((movie, i) => {
 			return (<MoviesListItem key={movie.id} movie={movie}></MoviesListItem>);
 		})
 

@@ -15,14 +15,15 @@ const MovieListitem = (props) => {
 		let stars = [];
 		const fractions = rating.toFixed(1).split('.');
 		const head = parseInt(fractions[0]);
-		const tail = parseInt(fractions[1]);
+		const tail = (parseInt(fractions[1]));
+		console.log(tail);
 		for (let i = 0; i < 4; i++) {
 			if (i < head) {
 				stars = [...stars, (<i className="fas fa-star"></i>)];
 			}
 
 			if (i > head && fractions.length) {
-				if (tail >= 3 && tail <= 9) {
+				if (tail >= 3 || tail <= 9) {
 					stars = [...stars, (<i className="fas fa-star-half-alt"></i>)];
 				}
 			}						
@@ -35,17 +36,20 @@ const MovieListitem = (props) => {
 		}
 		return stars;
 	})(rating);
-
-	const synopsis = movie.overview.length > 56 ? movie.overview.substr(0,56) + ' ...[Read More]' : movie.overview;
+	const synopsis = movie.overview;
+	const synopsisFractions= synopsis.split(' ');
+	let excerpt = synopsisFractions.length > 11 ? synopsisFractions.slice(0,10).join(' ') : synopsis;
+	excerpt = excerpt.length > 56 ? excerpt.substr(0,46) + ' ...[Read More]' : excerpt + ' ...[Read More]';
+	
 	return (
 		<div className="movie-item">
 			<div className="movie-item__header">
 				<img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt={movie.title} title={movie.title} />
 			</div>
 			<div className="movie-item__content">
-				<p>{stars}</p>
+				<p>{stars} <i>/ {rating}</i></p>
 				<h1>{movie.title}</h1>
-				<p className="synopsis">{synopsis}</p>
+				<p >{excerpt}</p>
 			</div>
 			<div className="movie-item__footer"></div>
 		</div>
