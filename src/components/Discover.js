@@ -18,7 +18,7 @@ class Discover extends Component {
 	}
 	discoverMovieList() {
 		let list = [];
-		list = this.props.movies.slice(0, 15).map((movie, i) => {
+		list = this.props.movies.slice(0, 10).map((movie, i) => {
 			return (<NowPlayingMovie key={movie.id} isHighlighted={i == 2 ? true : false} movie={movie}></NowPlayingMovie>);
 		})
 
@@ -31,7 +31,7 @@ class Discover extends Component {
 
 	render() {
 
-		const content = this.props.loading ? (<h1>Loading...</h1>) : this.discoverMovieList();
+		const content = this.props.loading ? <h1>Loading...</h1> : this.discoverMovieList();
 
 		return (
 			<div className="discover">
@@ -49,7 +49,9 @@ class Discover extends Component {
 					</div>
 				</div>
 				<div className="discover__content">
-					{content}
+					<div className="discover__content__movie-list">
+						{content}
+					</div>
 				</div>
 				<div className="discover__footer"></div>
 			</div>

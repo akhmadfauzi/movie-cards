@@ -15,9 +15,11 @@
 
 
 .discover{
+	
 	width: 100%;
 	height: auto;
 	&__header{
+		padding: 0 50px;
 		height: 100px;
 		overflow: hidden;
 		color:#fff;
@@ -31,26 +33,37 @@
 
 			li{
 				display: inline-block;
+
+				a:link,a:visited{
+					text-decoration: none;
+					color: #fff;
+				}
 			}
 		}
 	}
 	&__content{
+		background: $secondaryNavy;
 
+		& > h1 {
+			color: #fff;
+		}
+		&____movie-list{
+		max-width: 1024px;
 		width: 100%;
-		height: auto;
+		padding: 20px 0;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		background: $secondaryNavy;
-		padding: 20px 0;
-		
-		&__movie{
-			font-family: 'Roboto',sans-serif;
-			color:#fff;
-			width: 215px;
-			margin:10px 20px;
-			overflow: hidden;
+		height: auto;
+			&__movie{
+				font-family: 'Roboto',sans-serif;
+				color:#fff;
+				width: 215px;
+				margin:10px 20px;
+				overflow: hidden;
+			}
 		}
+	
 	}
 }

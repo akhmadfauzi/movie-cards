@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial|Roboto");
+.movie-item {
+  width: 90%;
+  padding: 5%;
+  overflow: hidden;
+}
+.movie-item:first-child {
+  margin-top: 15px;
+}
+.movie-item__header img {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+}
+.movie-item__content {
+  background: #fff;
+  height: auto;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  -o-border-radius: 0 0 10px 10px;
+  -ms-border-radius: 0 0 10px 10px;
+  -webkit-border-radius: 0 0 10px 10px;
+  padding: 5%;
+}
+.movie-item__content > h1 {
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+}
+.movie-item__content > p {
+  padding: 0;
+  margin: 5px 0;
+}
+.movie-item__content > p i {
+  color: #FEC72A;
+}
+
+/*# sourceMappingURL=movies-list-item.css.map */
