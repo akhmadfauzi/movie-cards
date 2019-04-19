@@ -6,5 +6,12 @@
     overflow: hidden;
   }
 }
+@media only screen and (min-width: 992px) {
+  .movies-list__content {
+    margin: 0 auto;
+    width: 960px;
+    overflow: hidden;
+  }
+}
 
 /*# sourceMappingURL=movies-list.css.map */

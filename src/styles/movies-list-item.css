@@ -1,22 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial|Roboto");
 .movie-item {
-  width: 90%;
-  padding: 5%;
-  overflow: hidden;
-}
-.movie-item:first-child {
-  margin-top: 15px;
+  width: 50%;
+  margin: 5% 0;
+  float: left;
+  overflow: hidden !important;
 }
 @media only screen and (min-width: 768px) {
   .movie-item {
     width: 200px;
     padding: 10px;
     float: left;
-    height: 450px;
+    height: 350px;
     margin: 15px 0 0 0 !important;
   }
   .movie-item:first-child {
     margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .movie-item {
+    width: 220px;
   }
 }
 .movie-item__header img {
@@ -43,7 +46,6 @@
 }
 @media only screen and (min-width: 768px) {
   .movie-item__content {
-    height: 166px;
     overflow: hidden;
   }
 }

@@ -8,4 +8,12 @@
 			overflow: hidden;
 		}
 	}
+
+	@include desktop {
+		&__content{
+			margin:0 auto;
+			width: 960px;
+			overflow: hidden;
+		}
+	}
 }

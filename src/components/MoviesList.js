@@ -18,7 +18,7 @@ class MoviesList extends Component {
 
 	movies() {
 		let list = [];
-		list = this.props.movies.slice(0, 10).map((movie, i) => {
+		list = this.props.movies.slice(0, 12).map((movie, i) => {
 			return (<MoviesListItem key={movie.id} movie={movie}></MoviesListItem>);
 		})
 
@@ -30,7 +30,7 @@ class MoviesList extends Component {
 	}
 	render() {
 		const content = this.props.loading ? (<h1>Loading...</h1>) : this.movies();
-		
+
 		return (
 			<div className="movies-list">
 				<div className="movies-list__header">
