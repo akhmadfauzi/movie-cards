@@ -20,6 +20,7 @@
 @media only screen and (min-width: 992px) {
   .movie-item {
     width: 220px;
+    height: auto;
   }
 }
 .movie-item__header img {
@@ -34,7 +35,7 @@
 }
 .movie-item__content {
   background: #fff;
-  height: auto;
+  height: 70px;
   width: 80%;
   margin: 0 auto;
   border-radius: 0 0 10px 10px;
@@ -53,6 +54,14 @@
   font-size: 1em;
   padding: 0;
   margin: 0;
+}
+.movie-item__content > h1 a:link, .movie-item__content > h1 a:visited {
+  text-decoration: none;
+  color: black;
+}
+.movie-item__content > h1 a:hover {
+  text-decoration: underline;
+  text-decoration-color: #E55B6A;
 }
 .movie-item__content > p {
   padding: 0;

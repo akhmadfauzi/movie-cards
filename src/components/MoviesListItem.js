@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../styles/movies-list-item.css';
-
+import {Link} from 'react-router-dom';
 function mapStateToProps(state) {
 	return {
 
@@ -54,7 +54,7 @@ const MovieListitem = (props) => {
 			</div>
 			<div className="movie-item__content">
 				<p title={rating}>{stars}</p>
-				<h1 title={movie.title}>{title}</h1>
+				<h1 title={movie.title}><Link to={`/movie/${movie.id}`}>{title}</Link></h1>
 				{/* <p >{excerpt}</p> */}
 			</div>
 			<div className="movie-item__footer"></div>

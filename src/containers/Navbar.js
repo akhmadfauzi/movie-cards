@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = props => {
 	return (
@@ -11,10 +12,10 @@ const Navbar = props => {
 					 <span><i className="fas fa-bars"></i></span>
 					</div>
 					<ul>
-						<li>Home <span></span></li>
-						<li>Category <span></span></li>
-						<li>About <span></span></li>
-						<li>Contact <span></span></li>
+						<li><Link to="/">Home</Link> <span></span></li>
+						<li><Link to="/category/">Category</Link> <span></span></li>
+						<li><Link to="/about/">About</Link> <span></span></li>
+						<li><Link to="/contact/">Contact</Link> <span></span></li>
 					</ul>
 				</div>
 			</div>

@@ -66,18 +66,28 @@
   display: none;
 }
 .content__navbar-items ul li {
-  font-family: "Questrial", Arial, Helvetica, sans-serif;
-  display: block;
-  line-height: 70px;
-  width: 100%;
   position: relative;
-  text-align: center;
 }
 @media only screen and (min-width: 768px) {
   .content__navbar-items ul li {
     display: inline-block;
     width: 100px;
   }
+}
+.content__navbar-items ul li a:link, .content__navbar-items ul li a:visited {
+  font-family: "Questrial", Arial, Helvetica, sans-serif;
+  display: block;
+  line-height: 70px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+.content__navbar-items ul li a:link:hover, .content__navbar-items ul li a:visited:hover {
+  color: #E55B6A;
+  font-weight: bold;
+  cursor: pointer;
 }
 .content__navbar-items ul li span {
   opacity: 0;
@@ -88,10 +98,6 @@
   bottom: 0;
   margin-left: auto;
   margin-right: auto;
-}
-.content__navbar-items ul li:hover {
-  color: #E55B6A;
-  cursor: pointer;
 }
 .content__navbar-items ul li:hover span {
   height: 5px;

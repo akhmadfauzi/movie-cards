@@ -1,71 +1,81 @@
-@import 'colors';
-@import 'mediaQueries';
+@import "colors";
+@import "mediaQueries";
 
-.movie-item{
-	
-	@include tablet{
+.movie-item {
+  @include tablet {
+    &:first-child {
+      margin: 0;
+    }
+
+    width: 200px;
+    padding: 10px;
+    float: left;
+    height: 350px;
+    margin: 15px 0 0 0 !important;
+  }
+
+  @include desktop {
+    width: 220px;
+    height: auto;
+  }
+  width: 50%;
+  margin: 5% 0;
+  float: left;
+  // height: 400px;
+  overflow: hidden !important;
+  &__header {
+    img {
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px 10px 0 0;
+      -moz-border-radius: 10px 10px 0 0;
+      -o-border-radius: 10px 10px 0 0;
+      -ms-border-radius: 10px 10px 0 0;
+      -webkit-border-radius: 10px 10px 0 0;
+    }
+  }
+
+  &__content {
+    @include tablet {
+      overflow: hidden;
+    }
+    background: #fff;
+    height: 70px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    padding: 5%;
+    & > h1 {
+      font-size: 1em;
+      padding: 0;
+      margin: 0;
+
+      a {
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: black;
+		}
 		
-		&:first-child{
-			margin:0;
+		&:hover{
+			text-decoration: underline;
+			text-decoration-color: $lightRed;
 		}
+      }
+    }
 
-		width: 200px;
-		padding: 10px;
-		float: left;
-		height: 350px;
-		margin: 15px 0 0 0 !important;
-	}
-
-	@include desktop {
-		width: 220px;
-		// height: 480px;
-	}
-	width: 50%;
-	margin: 5% 0;
-	float: left;
-	// height: 400px;
-	overflow: hidden !important;
-	&__header{
-		img{
-			width: 90%;
-			display: block;
-			margin: 0 auto;
-			border-radius: 10px 10px 0 0;
-			-moz-border-radius: 10px 10px 0 0;
-			-o-border-radius: 10px 10px 0 0;
-			-ms-border-radius: 10px 10px 0 0;
-			-webkit-border-radius: 10px 10px 0 0;
-		}
-	}
-
-	&__content{
-		@include tablet{
-			
-			overflow: hidden;
-		}
-		background: #fff;
-		height: auto;
-		width: 80%;		
-		margin: 0 auto;
-		border-radius: 0 0 10px 10px;
-		-moz-border-radius: 0 0 10px 10px;
-		-o-border-radius: 0 0 10px 10px;
-		-ms-border-radius: 0 0 10px 10px;
-		-webkit-border-radius: 0 0 10px 10px;
-		padding: 5%;
-		& > h1 {
-			font-size: 1em;
-			padding: 0;
-			margin: 0;
-		}
-
-		& > p {
-			padding: 0;
-			margin: 5px 0;
-			i {
-				font-size: .7em;
-				color: $yellow;
-			}
-		}
-	}	
+    & > p {
+      padding: 0;
+      margin: 5px 0;
+      i {
+        font-size: 0.7em;
+        color: $yellow;
+      }
+    }
+  }
 }

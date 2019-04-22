@@ -4,11 +4,14 @@ const initialState = {
 	'nowPlaying' : {
 		'isFetching':false,
 		'items':[]
-	}
+	},
+	'movie': null
 }
 
 export default function movies(state = initialState, action){
+	console.log(action.type);
 	switch (action.type) {
+		
 		case act.REQUEST_NOW_PLAYING:
 			return  {
 				...state,
@@ -24,6 +27,12 @@ export default function movies(state = initialState, action){
 					items: [...action.items.results]
 				}
 			}
+			case act.RECEIVED_MOVIE_DETAILS:
+			return {
+				...state,
+				movie:action.movie
+			}
+
 			
 	
 		default:
