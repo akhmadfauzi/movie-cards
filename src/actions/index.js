@@ -25,6 +25,12 @@ export const receivedMovieDetails = (result) => ({
 	movie: result
 })
 
+export const REQUEST_MOVIE_DETAILS = 'REQUEST_MOVIE_DETAILS';
+export const requestMovieDetails = () => ({
+	type:REQUEST_MOVIE_DETAILS,
+	isFetching : true
+})
+
 export function fetchNowPlaying(){
 	return function(dispatch){
 		dispatch(requestNowPlaying());
@@ -39,6 +45,7 @@ export function fetchNowPlaying(){
 
 export function fetchMovieById(id){
 	return function(dispatch){
+		dispatch(requestMovieDetails());
 		const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`;
 		return fetch(url)
 		.then(response=>response.json())

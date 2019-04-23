@@ -1,4 +1,45 @@
-.movie{
-    width: 100%;
-    background: #fff;
+.movie {
+  width: 100%;
+
+  &__header {
+    padding: 0 5%;
+  }
+
+  &__content {
+	//   background: skyblue;
+	& * {
+		margin-top : 10px;
+	}
+    img {
+	  border-radius: 10px;
+	  width: 90%;
+	  margin: 0 auto;
+	  display: block;
+	}
+	
+	p{
+		display: block;
+		margin: 10px auto 0 auto;
+		text-align: left;
+		width: 80%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		padding: 5%;
+		&::after{
+			content: "\00a0\00a0";
+			border-radius:10px;
+			width: 100%;
+			position: absolute;
+			top:0;
+			left:0;
+			height: inherit;
+			background: #ccc;
+			display: block;
+			z-index: 0;
+			opacity: .2;
+		}
+	}
+  }
 }

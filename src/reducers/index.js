@@ -1,42 +1,53 @@
 import * as act from '../actions';
 
 const initialState = {
-	'nowPlaying' : {
-		'isFetching':false,
-		'items':[]
+	nowPlaying: {
+		isFetching: false,
+		items: []
 	},
-	'movie': null
+	movie: {
+		isFetching: false,
+		item: undefined
+	}
 }
 
-export default function movies(state = initialState, action){
-	console.log(action.type);
+export default function movies(state = initialState, action) {
 	switch (action.type) {
-		
+
 		case act.REQUEST_NOW_PLAYING:
-			return  {
+			return {
 				...state,
-				nowPlaying:{
+				nowPlaying: {
 					isFetching: action.isFetching
 				}
 			}
-			case act.RECEIVED_NOW_PLAYING:
-			return  {
+		case act.RECEIVED_NOW_PLAYING:
+			return {
 				...state,
-				nowPlaying:{
+				nowPlaying: {
 					isFetching: false,
 					items: [...action.items.results]
 				}
 			}
-			case act.RECEIVED_MOVIE_DETAILS:
+		case act.RECEIVED_MOVIE_DETAILS:
 			return {
 				...state,
-				movie:action.movie
+				movie: {
+					item: action.movie,
+					isFetching: false
+				}
+			}
+		case act.REQUEST_MOVIE_DETAILS:
+			return {
+				...state,
+				movie: {
+					item: undefined,
+					isFetching: action.isFetching,
+				}
 			}
 
-			
-	
 		default:
 			return state;
 	}
-	
+
 }

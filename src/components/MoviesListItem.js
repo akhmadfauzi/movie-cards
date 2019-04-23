@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import '../styles/movies-list-item.css';
 import {Link} from 'react-router-dom';
@@ -32,12 +32,12 @@ function getStar(vote) {
 	return stars;
 }
 
-function getExcerpt(synopsis){
-	const synopsisFractions = synopsis.split(' ');
-	let excerpt = synopsisFractions.length > 11 ? synopsisFractions.slice(0,10).join(' ') : synopsis;
-	excerpt = excerpt.length > 56 ? excerpt.substr(0,46) + ' ...[Read More]' : excerpt + ' ...[Read More]';
-	return excerpt;
-}
+// function getExcerpt(synopsis){
+// 	const synopsisFractions = synopsis.split(' ');
+// 	let excerpt = synopsisFractions.length > 11 ? synopsisFractions.slice(0,10).join(' ') : synopsis;
+// 	excerpt = excerpt.length > 56 ? excerpt.substr(0,46) + ' ...[Read More]' : excerpt + ' ...[Read More]';
+// 	return excerpt;
+// }
 
 const MovieListitem = (props) => {
 	const movie = props.movie;

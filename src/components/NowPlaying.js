@@ -19,7 +19,7 @@ class NowPlaying extends Component {
 	nowPlayingList(){
 		let list = [];
 		list = this.props.movies.slice(0,5).map((movie,i)=>{
-			return (<NowPlayingMovie key={movie.id} isHighlighted={i==2?true:false} movie={movie}></NowPlayingMovie>);
+			return (<NowPlayingMovie key={movie.id} isHighlighted={i===2?true:false} movie={movie}></NowPlayingMovie>);
 		}) 
 
 		return(
