@@ -26,7 +26,7 @@ class Navbar extends React.Component {
 		return (
 			<nav className="navbar">
 				<div className="navbar__content">
-					<div className="content__navbar-brand">MovieCards</div>
+					<div className="navbar-brand">MovieCards</div>
 					<div className="menu-toggle" onClick={this.toggleClickHandler.bind(this)}>
 						<span><i className="fas fa-bars"></i></span>
 					</div>

@@ -8,18 +8,21 @@ $navbar-height: 70px;
   height: $navbar-height;
   color: #fff;
   background: $secondaryNavy;
-  &__content {
-    max-width: 960px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  &__content > div {
-    @include tablet {
-      float: left;
-    }
-  }
 }
+
+.navbar-brand{
+	line-height: $navbar-height;
+	float: left;
+	width: 20%;
+	background:#ccc;
+	padding: 0 2.5%;
+}
+
+.menu-toggle {
+	width: 75%;	
+	float: right;
+	background: #ccc;
+  }
 
 .collapse {
   display: none;
@@ -53,17 +56,19 @@ $navbar-height: 70px;
 }
 
 @include tablet {
+  .menu-toggle {
+    display: none !important;
+  }
   .collapse {
-	float: right!important;
+    float: right !important;
     display: block;
     ul {
       li {
-		display: inline-block;
+        display: inline-block;
         a {
           &:link,
           &:visited {
             width: 100px;
-            
           }
         }
       }
