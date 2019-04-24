@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial|Roboto");
 .movie-item {
   width: 50%;
-  margin: 5% 0;
+  margin: 2.5% 0;
   float: left;
   overflow: hidden !important;
 }

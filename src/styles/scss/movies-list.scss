@@ -3,6 +3,9 @@
 .movies-list{
 	min-height: 100vh;
 	margin-bottom:100px;
+	height: auto;
+	width: 100%;
+	
 	@include tablet{
 		&__content{
 			margin:0 auto;

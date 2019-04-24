@@ -2,6 +2,11 @@
 @import "mediaQueries";
 
 .movie-item {
+	width: 50%;
+	margin: 2.5% 0;
+	float: left;
+	// height: 400px;
+	overflow: hidden !important;
   @include tablet {
     &:first-child {
       margin: 0;
@@ -18,11 +23,7 @@
     width: 220px;
     height: auto;
   }
-  width: 50%;
-  margin: 5% 0;
-  float: left;
-  // height: 400px;
-  overflow: hidden !important;
+
   &__header {
     img {
       width: 90%;

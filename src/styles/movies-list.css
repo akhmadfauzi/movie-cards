@@ -2,6 +2,8 @@
 .movies-list {
   min-height: 100vh;
   margin-bottom: 100px;
+  height: auto;
+  width: 100%;
 }
 @media only screen and (min-width: 768px) {
   .movies-list__content {
