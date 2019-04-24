@@ -8,11 +8,28 @@ const initialState = {
 	movie: {
 		isFetching: false,
 		item: undefined
+	},
+	ui: {
+		navbar: {
+			toggle: false
+		}
 	}
 }
 
 export default function movies(state = initialState, action) {
 	switch (action.type) {
+
+		case act.TOGGLE_CLICK:
+			return {
+				...state,
+				ui: {
+					...state.ui,
+					navbar: {
+						...state.navbar,
+						toggle: state.ui.navbar.toggle ? false : true
+					}
+				}
+			}
 
 		case act.REQUEST_NOW_PLAYING:
 			return {

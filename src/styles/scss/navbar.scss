@@ -50,6 +50,22 @@ $navbar-height: 70px;
   }
 }
 
+.toggle-open{
+	display: block!important;
+	right:-1000px;
+	position: relative;
+	z-index: 1000;
+	transition: right .5s ease-in;
+}
+
+.slide-in{
+	right:0 !important;
+}
+
+.slide-out{
+	right:-999px !important;
+}
+
 .content {
   &__navbar-items {
     @include tablet {
@@ -62,7 +78,8 @@ $navbar-height: 70px;
       padding: 0;
       margin: 0;
       background: $secondaryNavy;
-      display: none;
+	  display: none;
+	  
       li {
         position: relative;
         @include tablet {

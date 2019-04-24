@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sassify": "sass --watch ./src/styles/scss/app.scss:./src/styles/app.css ./src/styles/scss/movie.scss:./src/styles/movie.css ./src/styles/scss/movies-list-item.scss:./src/styles/movies-list-item.css ./src/styles/scss/movies-list.scss:./src/styles/movies-list.css ./src/styles/scss/navbar.scss:./src/styles/navbar.css ./src/styles/scss/now-playing.scss:./src/styles/now-playing.css ./src/styles/scss/discover.scss:./src/styles/discover.css"
+    "sassify": "sass --watch ./src/styles/scss/app.scss:./src/styles/app.css ./src/styles/scss/footer.scss:./src/styles/footer.css ./src/styles/scss/movie.scss:./src/styles/movie.css ./src/styles/scss/movies-list-item.scss:./src/styles/movies-list-item.css ./src/styles/scss/movies-list.scss:./src/styles/movies-list.css ./src/styles/scss/navbar.scss:./src/styles/navbar.css ./src/styles/scss/now-playing.scss:./src/styles/now-playing.css ./src/styles/scss/discover.scss:./src/styles/discover.css"
   },
   "eslintConfig": {
     "extends": "react-app"

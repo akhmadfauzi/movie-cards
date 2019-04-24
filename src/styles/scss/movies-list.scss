@@ -1,6 +1,8 @@
 @import 'colors';
 @import 'mediaQueries';
 .movies-list{
+	min-height: 100vh;
+	margin-bottom:100px;
 	@include tablet{
 		&__content{
 			margin:0 auto;

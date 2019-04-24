@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial|Roboto");
+.movies-list {
+  min-height: 100vh;
+  margin-bottom: 100px;
+}
 @media only screen and (min-width: 768px) {
   .movies-list__content {
     margin: 0 auto;

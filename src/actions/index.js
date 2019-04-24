@@ -1,5 +1,8 @@
+export * from './ui';
+
 const API_KEY = '9d9c0d73b46a889cf1503cd92b762903';
 const BASE_URL = 'https://api.themoviedb.org/3';
+
 
 export const NOW_PLAYING = 'NOW_PLAYING';
 export const getNowPlaying = () => ({
@@ -22,6 +25,7 @@ export const receivedNowPlaying = (result) => ({
 export const RECEIVED_MOVIE_DETAILS = 'RECEIVED_MOVIE_DETAILS';
 export const receivedMovieDetails = (result) => ({
 	type:RECEIVED_MOVIE_DETAILS,
+	isFetching:false,
 	movie: result
 })
 

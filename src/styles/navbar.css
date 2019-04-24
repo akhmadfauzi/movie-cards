@@ -52,6 +52,22 @@
   }
 }
 
+.toggle-open {
+  display: block !important;
+  right: -1000px;
+  position: relative;
+  z-index: 1000;
+  transition: right 0.5s ease-in;
+}
+
+.slide-in {
+  right: 0 !important;
+}
+
+.slide-out {
+  right: -999px !important;
+}
+
 @media only screen and (min-width: 768px) {
   .content__navbar-items {
     float: right !important;

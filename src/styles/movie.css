@@ -1,9 +1,30 @@
-@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Questrial|Roboto");
 .movie {
   width: 100%;
+  margin: 10px 0;
+  color: white;
+  display: block;
+  min-height: 100vh;
+  margin-bottom: 100px;
 }
 .movie__header {
   padding: 0 5%;
+}
+.movie__header a:link, .movie__header a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+.movie__header a:hover {
+  color: #E55B6A;
+}
+.movie__description {
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 5%;
+  background: #0B1022;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 .movie__content * {
   margin-top: 10px;
@@ -14,29 +35,72 @@
   margin: 0 auto;
   display: block;
 }
-.movie__content p {
-  display: block;
-  margin: 10px auto 0 auto;
-  text-align: left;
-  width: 80%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  padding: 5%;
+
+@media only screen and (min-width: 768px) {
+  .movie {
+    width: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .movie * {
+    margin-top: 0;
+  }
+  .movie__header {
+    padding: 0 6.25px;
+    margin-top: 10px;
+  }
+  .movie__description {
+    width: 280px;
+    float: right;
+    height: auto;
+    overflow: hidden;
+    padding: 22.5px;
+    border-radius: 10px;
+  }
+  .movie__description i {
+    color: #FEC72A;
+  }
+  .movie__content img {
+    border-radius: 10px;
+    width: 300px;
+    padding: 0 6.25px;
+    margin: 0;
+    display: block;
+    float: left;
+  }
 }
-.movie__content p::after {
-  content: "  ";
-  border-radius: 10px;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: inherit;
-  background: #ccc;
-  display: block;
-  z-index: 0;
-  opacity: 0.2;
+@media only screen and (min-width: 992px) {
+  .movie {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .movie * {
+    margin-top: 0;
+  }
+  .movie__header {
+    padding: 0 6.25px;
+    margin-top: 10px;
+  }
+  .movie__description {
+    width: 580px;
+    float: right;
+    height: auto;
+    overflow: hidden;
+    padding: 22.5px;
+    border-radius: 10px;
+  }
+  .movie__description i {
+    color: #FEC72A;
+  }
+  .movie__content img {
+    border-radius: 10px;
+    width: 300px;
+    padding: 0 6.25px;
+    margin: 0;
+    display: block;
+    float: left;
+  }
 }
 
 /*# sourceMappingURL=movie.css.map */

@@ -1,45 +1,132 @@
+@import "mediaQueries";
+@import "colors";
+
 .movie {
   width: 100%;
-
+  margin: 10px 0;
+  color: white;
+  display: block;
+  min-height: 100vh;
+  margin-bottom:100px;
+  
   &__header {
-    padding: 0 5%;
-  }
-
-  &__content {
-	//   background: skyblue;
-	& * {
-		margin-top : 10px;
-	}
-    img {
-	  border-radius: 10px;
-	  width: 90%;
-	  margin: 0 auto;
-	  display: block;
-	}
 	
-	p{
-		display: block;
-		margin: 10px auto 0 auto;
-		text-align: left;
-		width: 80%;
-		height: 100%;
-		position: relative;
-		overflow: hidden;
-		z-index: 1;
-		padding: 5%;
-		&::after{
-			content: "\00a0\00a0";
-			border-radius:10px;
-			width: 100%;
-			position: absolute;
-			top:0;
-			left:0;
-			height: inherit;
-			background: #ccc;
-			display: block;
-			z-index: 0;
-			opacity: .2;
+	padding: 0 5%;
+	
+	a{
+		
+		&:link,&:visited{
+			color:#fff;
+			text-decoration: none;
+		}
+
+		&:hover{
+			color:$lightRed;
 		}
 	}
   }
+
+  &__description {
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    padding: 0 5%;
+    background: $secondaryNavy;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+  &__content {
+    //   background: skyblue;
+    & * {
+      margin-top: 10px;
+    }
+    img {
+      border-radius: 10px;
+      width: 90%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
 }
+
+@include tablet {
+
+  .movie {
+    width: 650px;
+    margin: 0 auto;
+	overflow: hidden;
+
+
+	& * {
+		margin-top: 0;
+	  }
+    &__header {
+	  padding: 0 6.25px;
+	  margin-top:10px;
+    }
+    &__description {
+      width: 280px;
+      float: right;
+      height: auto;
+      overflow: hidden;
+	  padding: 22.5px;
+	  border-radius: 10px;
+
+	  
+	  & i {
+		  color: $yellow;
+	  }
+    }
+    &__content {
+      img {
+        border-radius: 10px;
+        width: 300px;
+        padding: 0 6.25px;
+        margin: 0;
+        display: block;
+        float: left;
+      }
+    }
+  }
+}
+
+
+@include desktop {
+	.movie {
+	  width: 960px;
+	  margin: 0 auto;
+	  overflow: hidden;
+  
+	  & * {
+		  margin-top: 0;
+		}
+	  &__header {
+		padding: 0 6.25px;
+		margin-top:10px;
+	  }
+	  &__description {
+		width: 580px;
+		float: right;
+		height: auto;
+		overflow: hidden;
+		padding: 22.5px;
+		border-radius: 10px;
+  
+		
+		& i {
+			color: $yellow;
+		}
+	  }
+	  &__content {
+		img {
+		  border-radius: 10px;
+		  width: 300px;
+		  padding: 0 6.25px;
+		  margin: 0;
+		  display: block;
+		  float: left;
+		}
+	  }
+	}
+  }

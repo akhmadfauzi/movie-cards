@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial|Roboto");
+.page-footer {
+  height: 100px;
+  font-family: "Questrial", "Times New Roman", Times, serif;
+  background: #0B1022;
+  display: block;
+  width: 90%;
+  overflow: hidden;
+  color: #fff;
+  padding: 0 5%;
+  position: relative;
+}
+.page-footer__container {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: inherit;
+}
+.page-footer > div {
+  display: block;
+}
+.page-footer__header {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.page-footer__copyright {
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+.page-footer__copyright span {
+  font-size: 0.7em;
+}
+.page-footer__copyright span i {
+  font-size: 0.7em;
+  color: red;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-footer__container {
+    width: 650px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .page-footer__container {
+    width: 960px;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

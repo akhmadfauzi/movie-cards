@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["scss/_colors.scss","scss/_mediaQueries.scss","scss/movies-list.scss"],"names":[],"mappings":"AAAQ;ACYN;ECRA;IACC;IACA;IACA;;;ADWD;ECNA;IACC;IACA;IACA","file":"movies-list.css"}
+{"version":3,"sourceRoot":"","sources":["scss/_fonts.scss","scss/movies-list.scss","scss/_mediaQueries.scss"],"names":[],"mappings":"AAAQ;ACER;EACC;EACA;;ACQC;EDNA;IACC;IACA;IACA;;;ACSD;EDJA;IACC;IACA;IACA","file":"movies-list.css"}

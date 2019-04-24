@@ -1,0 +1,64 @@
+@import 'colors';
+@import 'mediaQueries';
+
+.page-footer{
+	height: 100px;
+	font-family: 'Questrial','Times New Roman', Times, serif;
+	background: $secondaryNavy;
+	display: block;
+	width: 90%;
+	overflow: hidden;
+	color:#fff;
+	padding: 0 5%;
+	position: relative;
+	&__container{
+		width:100%;
+		margin:0 auto;
+		overflow: hidden;
+		position: relative;
+		height: inherit;
+	}
+	& > div {
+		display: block;
+	}
+
+	&__header{
+		text-align: center;
+		margin-top:10px;
+		font-weight: bold;
+
+	}
+
+	&__copyright{
+		text-align: center;
+		padding: 5px 0;
+		position: absolute;
+		width: 100%;
+		left:0;
+		bottom: 0;
+		span{
+			font-size: .7em;
+
+			i{
+				font-size: .7em;
+				color:red;
+			}
+		}
+	}
+}
+
+@include tablet{
+	.page-footer{
+		&__container{
+			width:650px;
+		}
+	}
+}
+
+@include desktop{
+	.page-footer{
+		&__container{
+			width:960px;
+		}
+	}
+}
