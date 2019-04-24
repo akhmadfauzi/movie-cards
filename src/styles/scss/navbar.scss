@@ -3,20 +3,70 @@
 
 $navbar-height: 70px;
 .navbar {
-	padding: 0;
-	margin: 0;
-	height: $navbar-height;
-	color: #fff;
-	background: $secondaryNavy;
-	&__content {
-	  max-width: 960px;
-	  width: 100%;
-	  margin: 0 auto;
-	}
-  
-	&__content > div {
-	  @include tablet {
-		float: left;
-	  }
-	}
+  padding: 0;
+  margin: 0;
+  height: $navbar-height;
+  color: #fff;
+  background: $secondaryNavy;
+  &__content {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
   }
+
+  &__content > div {
+    @include tablet {
+      float: left;
+    }
+  }
+}
+
+.collapse {
+  display: none;
+  background: $secondaryNavy;
+  position: relative;
+  z-index: 999;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: auto;
+
+    li {
+      a {
+        &:link,
+        &:visited {
+          display: block;
+          padding: 10px;
+          color: #fff;
+          text-decoration: none;
+          font-family: "Questrial", "Times New Roman", Times, serif;
+        }
+
+        &:hover {
+          color: $lightRed;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .collapse {
+	float: right!important;
+    display: block;
+    ul {
+      li {
+		display: inline-block;
+        a {
+          &:link,
+          &:visited {
+            width: 100px;
+            
+          }
+        }
+      }
+    }
+  }
+}

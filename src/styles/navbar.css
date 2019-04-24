@@ -17,4 +17,40 @@
   }
 }
 
+.collapse {
+  display: none;
+  background: #0B1022;
+  position: relative;
+  z-index: 999;
+}
+.collapse ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  height: auto;
+}
+.collapse ul li a:link, .collapse ul li a:visited {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Questrial", "Times New Roman", Times, serif;
+}
+.collapse ul li a:hover {
+  color: #E55B6A;
+}
+
+@media only screen and (min-width: 768px) {
+  .collapse {
+    float: right !important;
+    display: block;
+  }
+  .collapse ul li {
+    display: inline-block;
+  }
+  .collapse ul li a:link, .collapse ul li a:visited {
+    width: 100px;
+  }
+}
+
 /*# sourceMappingURL=navbar.css.map */
