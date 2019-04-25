@@ -3,4 +3,8 @@ body, html {
   background: #0D1327;
 }
 
+body {
+  min-height: 100vh;
+}
+
 /*# sourceMappingURL=app.css.map */

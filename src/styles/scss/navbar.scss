@@ -2,33 +2,65 @@
 @import "mediaQueries";
 
 $navbar-height: 70px;
+/*
+ BASE
+*/
 .navbar {
   padding: 0;
   margin: 0;
-  height: $navbar-height;
   color: #fff;
   background: $secondaryNavy;
+  &__content {
+    height: $navbar-height;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
 }
 
-.navbar-brand{
-	line-height: $navbar-height;
-	float: left;
-	width: 20%;
-	background:#ccc;
-	padding: 0 2.5%;
+.navbar-brand {
+  line-height: $navbar-height;
+
+  float: left;
+  padding: 0 2.5%;
 }
 
 .menu-toggle {
-	width: 75%;	
-	float: right;
-	background: #ccc;
+  line-height: $navbar-height;
+  padding: 0 10px;
+  float: right;
+  span {
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    border-radius: 7px;
   }
+
+  &:hover {
+    span {
+      border: 1px solid $lightRed;
+      color: $lightRed;
+    }
+  }
+}
+.toggle-open {
+  display: block !important;
+  right: -999px !important;
+  transition: right 0.3s ease-in;
+}
+
+.slide-in {
+  right: 0 !important;
+}
 
 .collapse {
   display: none;
   background: $secondaryNavy;
-  position: relative;
+  position: absolute;
+  left:0;
+  width: 100%;
   z-index: 999;
+  top: 70px;
+  overflow: hidden;
 
   ul {
     padding: 0;
@@ -41,7 +73,7 @@ $navbar-height: 70px;
         &:link,
         &:visited {
           display: block;
-          padding: 10px;
+          padding: 20px;
           color: #fff;
           text-decoration: none;
           font-family: "Questrial", "Times New Roman", Times, serif;
@@ -56,18 +88,32 @@ $navbar-height: 70px;
 }
 
 @include tablet {
+  .navbar {
+    &__content {
+      width: 666px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+  }
   .menu-toggle {
     display: none !important;
   }
   .collapse {
+    background: transparent;
     float: right !important;
     display: block;
+    position: relative;
+    width: auto;
+    top: 0;
     ul {
       li {
         display: inline-block;
         a {
           &:link,
           &:visited {
+            padding: 0 !important;
+            text-align: center;
+            line-height: $navbar-height;
             width: 100px;
           }
         }
@@ -75,3 +121,17 @@ $navbar-height: 70px;
     }
   }
 }
+
+@include desktop {
+  .navbar {
+    &__content {
+      width: 960px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+  }
+}
+
+/*
+	INTERACTIVITY
+*/
