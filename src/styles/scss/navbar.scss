@@ -11,10 +11,10 @@ $navbar-height: 70px;
   color: #fff;
   background: $secondaryNavy;
   &__content {
-    height: $navbar-height;
+    min-height: $navbar-height;
     max-width: 100%;
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	height: auto;
   }
 }
 
@@ -56,7 +56,7 @@ $navbar-height: 70px;
   display: none;
   background: $secondaryNavy;
   position: absolute;
-  left:0;
+  right:0;
   width: 100%;
   z-index: 999;
   top: 70px;
@@ -103,7 +103,7 @@ $navbar-height: 70px;
     float: right !important;
     display: block;
     position: relative;
-    width: auto;
+    width: 400px;
     top: 0;
     ul {
       li {
@@ -130,6 +130,31 @@ $navbar-height: 70px;
       margin: 0 auto;
     }
   }
+
+  .collapse {
+    background: transparent;
+    float: right !important;
+    display: block;
+    position: relative;
+    width: auto;
+    top: 0;
+    ul {
+      li {
+        display: inline-block;
+        a {
+          &:link,
+          &:visited {
+            padding: 0 !important;
+            text-align: center;
+            line-height: $navbar-height;
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  
 }
 
 /*

@@ -9,10 +9,10 @@
   background: #0B1022;
 }
 .navbar__content {
-  height: 70px;
+  min-height: 70px;
   max-width: 100%;
   position: relative;
-  overflow: hidden;
+  height: auto;
 }
 
 .navbar-brand {
@@ -50,7 +50,7 @@
   display: none;
   background: #0B1022;
   position: absolute;
-  left: 0;
+  right: 0;
   width: 100%;
   z-index: 999;
   top: 70px;
@@ -89,7 +89,7 @@
     float: right !important;
     display: block;
     position: relative;
-    width: auto;
+    width: 400px;
     top: 0;
   }
   .collapse ul li {
@@ -107,6 +107,24 @@
     width: 960px;
     overflow: hidden;
     margin: 0 auto;
+  }
+
+  .collapse {
+    background: transparent;
+    float: right !important;
+    display: block;
+    position: relative;
+    width: auto;
+    top: 0;
+  }
+  .collapse ul li {
+    display: inline-block;
+  }
+  .collapse ul li a:link, .collapse ul li a:visited {
+    padding: 0 !important;
+    text-align: center;
+    line-height: 70px;
+    width: 100px;
   }
 }
 /*
