@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/navbar.css';
+import '../styles/scss/navbar.scss';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleClickHandler } from '../actions/ui';
@@ -19,7 +19,7 @@ class Navbar extends React.Component {
 		if (!toggled) {
 			setTimeout(() => {
 				menuWrapper.className = 'collapse toggle-open slide-in';
-			}, 500);
+			}, 100);
 		}else{
 			menuWrapper.className = 'collapse';
 		}

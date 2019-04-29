@@ -6,6 +6,7 @@ import Movie from './Movie';
 import Navbar from '../containers/Navbar';
 import Footer from '../containers/Footer';
 import MoviesList from './MoviesList';
+import Category from './Category';
 import {Route} from 'react-router-dom';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
 				{/* <MoviesList></MoviesList> */}
 				<Route path="/" exact component={MoviesList}></Route>
 				<Route path="/movie/:id" component={Movie} />
+				<Route path="/category/" component={Category} />
 				<Footer></Footer>
 			</div>
 		);

@@ -18,7 +18,6 @@ const mapDispatchToProps = {
 class Movie extends Component {
 	constructor(props) {
 		super(props)
-
 	}
 
 	componentDidMount() {
