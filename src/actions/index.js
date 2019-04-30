@@ -33,7 +33,19 @@ export const REQUEST_MOVIE_DETAILS = 'REQUEST_MOVIE_DETAILS';
 export const requestMovieDetails = () => ({
 	type:REQUEST_MOVIE_DETAILS,
 	isFetching : true
-})
+});
+
+export const REQUEST_MOVIE_CREDITS = 'REQUEST_MOVIE_CREDITS';
+export const requestMovieCredits = () => ({
+	type:REQUEST_MOVIE_CREDITS,
+	isFetching : true
+});
+
+export const RECEIVED_MOVIE_CREDITS = 'RECEIVED_MOVIE_CREDITS';
+export const receivedMovieCredits = (credits) => ({
+	type:RECEIVED_MOVIE_CREDITS,
+	credits
+});
 
 export function fetchNowPlaying(){
 	return function(dispatch){
@@ -55,6 +67,18 @@ export function fetchMovieById(id){
 		.then(response=>response.json())
 		.then(result=>{
 			dispatch(receivedMovieDetails(result));
+		})
+	}
+}
+
+export function fetchCredits(movieId){
+	return function(dispatch){
+		dispatch(requestMovieCredits());
+		const url = `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`;
+		return fetch(url)
+		.then(response=>response.json())
+		.then(result=>{
+			dispatch(receivedMovieCredits(result));
 		})
 	}
 }

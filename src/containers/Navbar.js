@@ -19,7 +19,7 @@ class Navbar extends React.Component {
 		if (!toggled) {
 			setTimeout(() => {
 				menuWrapper.className = 'collapse toggle-open slide-in';
-			}, 100);
+			}, 300);
 		}else{
 			menuWrapper.className = 'collapse';
 		}

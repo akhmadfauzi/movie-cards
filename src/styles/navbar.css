@@ -39,7 +39,7 @@
 .toggle-open {
   display: block !important;
   right: -999px !important;
-  transition: right 0.3s ease-in;
+  transition: right 0.1s ease-in;
 }
 
 .slide-in {

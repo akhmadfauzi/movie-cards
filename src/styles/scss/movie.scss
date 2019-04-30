@@ -37,7 +37,8 @@
   }
 
   &__content {
-    //   background: skyblue;
+	//   background: skyblue;
+	
     & * {
       margin-top: 10px;
     }
@@ -48,6 +49,10 @@
       display: block;
     }
   }
+}
+
+.cast-list{
+	padding:5%;
 }
 
 @include tablet {

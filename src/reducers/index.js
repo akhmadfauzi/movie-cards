@@ -7,7 +7,11 @@ const initialState = {
 	},
 	movie: {
 		isFetching: false,
-		item: undefined
+		item: undefined,
+		credits: {
+			isFetching : false,
+			item: undefined
+		}
 	},
 	ui: {
 		navbar: {
@@ -50,6 +54,7 @@ export default function movies(state = initialState, action) {
 			return {
 				...state,
 				movie: {
+					...state.movie,
 					item: action.movie,
 					isFetching: false
 				}
@@ -58,8 +63,32 @@ export default function movies(state = initialState, action) {
 			return {
 				...state,
 				movie: {
+					...state.movie,
 					item: undefined,
 					isFetching: action.isFetching,
+				}
+			}
+		case act.REQUEST_MOVIE_CREDITS:
+			return {
+				...state,
+				movie: {
+					...state.movie,
+					credits:{
+						...state.credits,
+						isFetching: action.isFetching,
+					}
+				}
+			}
+		case act.RECEIVED_MOVIE_CREDITS:
+			return {
+				...state,
+				movie: {
+					...state.movie,
+					credits:{
+						...state.credits,
+						item: action.credits,
+						isFetching: false
+					}
 				}
 			}
 

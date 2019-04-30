@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchMovieById } from '../actions';
+import { fetchMovieById, fetchCredits } from '../actions';
 import '../styles/movie.css';
 import {Link} from 'react-router-dom';
 
 const mapStateToProps = (state) => {
 	return ({
 		movie: state.movie.item,
-		loading: state.movie.isFetching
+		loading: state.movie.isFetching,
+		credits: state.movie.credits,
+		creditsLoading: state.movie.credits.isFetching
 	})
 }
 
 const mapDispatchToProps = {
-	fetchMovieById
+	fetchMovieById,
+	fetchCredits
 }
 
 class Movie extends Component {
@@ -27,9 +30,31 @@ class Movie extends Component {
 
 	getMovie() {
 		this.props.fetchMovieById(this.props.match.params.id);
+		this.props.fetchCredits(this.props.match.params.id);
+	}
+
+	getCasts(casts){
+		casts = casts.slice(0,10);
+		casts = casts.map((actor)=>(
+			<div key={actor.cast_id}>
+				<p>{actor.name} as {actor.character}</p>
+				
+			</div>
+		));
+
+		return (
+			<div className="cast-list">
+			<p>Cast : </p>
+				{casts}
+				<p> <Link to="/">See full cast <i className="fas fa-long-arrow-alt-right"></i></Link></p>
+			</div>
+		)
 	}
 
 	showMovie(movie) {
+		const credits = this.props.creditsLoading ? <h1 style={{color:'red'}}>loading</h1> : this.props.credits.item;
+		const casts = this.props.creditsLoading ? (<h1>Loading...</h1>) : this.getCasts(credits.cast);
+		
 		return (
 			<React.Fragment>
 				<div className="movie__header">
@@ -43,12 +68,17 @@ class Movie extends Component {
 						<p className="description__title">Synopsis : </p>
 						<p className="description__content">{movie.overview}</p>
 					</div>
+					<div className="movie__credits">
+						{casts}
+					</div>
 					
 				</div>
 				<div className="movie__footer"></div>
 			</React.Fragment>
 		)
 	}
+
+
 
 
 	render() {
