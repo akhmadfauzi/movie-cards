@@ -1,0 +1,58 @@
+@import "mediaQueries";
+@import "colors";
+
+.movie-cast-list{
+	padding:5%;
+    background: $secondaryNavy;
+	width:80%;
+	margin:0 auto;
+    border-radius: 10px;
+	&__header{
+		margin:0;
+		& h1{
+			margin:0;
+		}
+	}
+
+	&__item{
+		
+		clear: both;
+		margin-top: 10px;
+		overflow: hidden;
+		
+		& img{
+			height: 50px;
+			width: auto;
+			float: left;
+			margin-right: 10px;
+			border-radius: 50px;
+		}
+		& .name, & .character{
+			margin:0;
+		}
+
+		& .name {
+			font-size: 1em;
+		}
+
+		& .character{
+			font-size: .7em;
+		}
+	}
+
+	
+
+	&__footer{
+		a{
+			font-weight: bold;
+			&:link,&:visited{
+				color:#fff;
+				text-decoration: none;
+			}
+	
+			&:hover{
+				color:$lightRed;
+			}
+		}
+	}
+}

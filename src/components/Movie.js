@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchMovieById, fetchCredits } from '../actions';
 import '../styles/movie.css';
 import {Link} from 'react-router-dom';
+import MovieCasts from './MovieCasts';
 
 const mapStateToProps = (state) => {
 	return ({
@@ -33,27 +34,9 @@ class Movie extends Component {
 		this.props.fetchCredits(this.props.match.params.id);
 	}
 
-	getCasts(casts){
-		casts = casts.slice(0,10);
-		casts = casts.map((actor)=>(
-			<div key={actor.cast_id}>
-				<p>{actor.name} as {actor.character}</p>
-				
-			</div>
-		));
-
-		return (
-			<div className="cast-list">
-			<p>Cast : </p>
-				{casts}
-				<p> <Link to="/">See full cast <i className="fas fa-long-arrow-alt-right"></i></Link></p>
-			</div>
-		)
-	}
-
-	showMovie(movie) {
+		showMovie(movie) {
 		const credits = this.props.creditsLoading ? <h1 style={{color:'red'}}>loading</h1> : this.props.credits.item;
-		const casts = this.props.creditsLoading ? (<h1>Loading...</h1>) : this.getCasts(credits.cast);
+		const casts = this.props.creditsLoading ? (<h1>Loading...</h1>) : <MovieCasts casts={credits.cast}></MovieCasts>;
 		
 		return (
 			<React.Fragment>
