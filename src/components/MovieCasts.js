@@ -15,7 +15,7 @@ const MovieCasts = (props) => {
 	return (
 		<div className="movie-cast-list">
 			<div className="movie-cast-list__header">
-				<h1>Cast : </h1>
+				<h1>Cast</h1>
 			</div>
 			<div className="movie-cast-list__body">
 				{casts}

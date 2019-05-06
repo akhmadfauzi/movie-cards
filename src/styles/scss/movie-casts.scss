@@ -9,7 +9,7 @@
     background: $secondaryNavy;
 	width:80%;
 	margin:0 auto;
-    border-radius: 10px;
+    border-radius: 5px;
 	&__header{
 		margin:0;
 		& h1{
@@ -57,5 +57,12 @@
 				color:$lightRed;
 			}
 		}
+	}
+}
+
+@include tablet{
+	.movie-cast-list{
+		margin:10px auto!important;
+		padding:22.5px !important;
 	}
 }

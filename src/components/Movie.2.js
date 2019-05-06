@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovieById, fetchCredits } from '../actions';
-import '../styles/scss/movie.scss';
+import '../styles/movie.css';
 import {Link} from 'react-router-dom';
 import MovieCasts from './MovieCasts';
 
@@ -40,16 +40,15 @@ class Movie extends Component {
 		
 		return (
 			<React.Fragment>
-				
+				<div className="movie__header">
+					<Link to="/"><i className="fas fa-long-arrow-alt-left"></i> Back</Link>
+					<h1>{movie.title}</h1>
+				</div>
 				<div className="movie__content">
-					<img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" />
-					<div className="movie__header">
-						{/* <Link to="/"><i className="fas fa-long-arrow-alt-left"></i> Back</Link> */}
-						<h1>{movie.title}</h1>
-					</div>
+					<img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="" />
 					<div className="movie__description">
-						{/* <p className="description__title">{movie.vote_average} <i className="fas fa-star"></i> </p> */}
-						<p className="description__title"><h1>Synopsis</h1></p>
+						<p className="description__title">{movie.vote_average} <i className="fas fa-star"></i> </p>
+						<p className="description__title">Synopsis : </p>
 						<p className="description__content">{movie.overview}</p>
 					</div>
 					<div className="movie__credits">

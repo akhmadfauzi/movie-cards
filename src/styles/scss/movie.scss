@@ -43,22 +43,20 @@
       margin-top: 10px;
     }
     img {
-      border-radius: 10px;
-      width: 90%;
+      width: 100%;
       margin: 0 auto;
       display: block;
     }
   }
+
+  
 }
 
-.cast-list{
-	padding:5%;
-}
 
 @include tablet {
 
   .movie {
-    width: 650px;
+    width: 100%;
     margin: 0 auto;
 	overflow: hidden;
 
@@ -71,12 +69,12 @@
 	  margin-top:10px;
     }
     &__description {
-      width: 280px;
-      float: right;
+    //   width: 280px;
+    //   float: right;
       height: auto;
-      overflow: hidden;
+    //   overflow: hidden;
 	  padding: 22.5px;
-	  border-radius: 10px;
+	  border-radius: 5px !important;
 
 	  
 	  & i {
@@ -84,22 +82,26 @@
 	  }
     }
     &__content {
-      img {
-        border-radius: 10px;
-        width: 300px;
-        padding: 0 6.25px;
-        margin: 0;
-        display: block;
-        float: left;
-      }
-    }
+    //   img {
+    //     border-radius: 10px;
+    //     width: 100%;
+    //     padding: 0 6.25px;
+    //     margin: 0;
+    //     display: block;
+    //     float: left;
+    //   }
+	}
+	
+	
   }
+
+ 
 }
 
 
 @include desktop {
 	.movie {
-	  width: 960px;
+	  width: 100%;
 	  margin: 0 auto;
 	  overflow: hidden;
   
@@ -111,8 +113,8 @@
 		margin-top:10px;
 	  }
 	  &__description {
-		width: 580px;
-		float: right;
+		// width: 580px;
+		// float: right;
 		height: auto;
 		overflow: hidden;
 		padding: 22.5px;
@@ -123,15 +125,15 @@
 			color: $yellow;
 		}
 	  }
-	  &__content {
-		img {
-		  border-radius: 10px;
-		  width: 300px;
-		  padding: 0 6.25px;
-		  margin: 0;
-		  display: block;
-		  float: left;
-		}
-	  }
+	//   &__content {
+	// 	img {
+	// 	  border-radius: 10px;
+	// 	  width: 300px;
+	// 	  padding: 0 6.25px;
+	// 	  margin: 0;
+	// 	  display: block;
+	// 	  float: left;
+	// 	}
+	//   }
 	}
   }
