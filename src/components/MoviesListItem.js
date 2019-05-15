@@ -53,7 +53,7 @@ const MovieListitem = (props) => {
 				<img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt={movie.title} title={movie.title} />
 			</div>
 			<div className="movie-item__content">
-				<p title={rating}>{stars}</p>
+				<p title={rating}>{movie.vote_average} <i className="fas fa-star"></i>{/*{stars}*/}</p>
 				<h1 title={movie.title}><Link to={`/movie/${movie.id}`}>{title}</Link></h1>
 				{/* <p >{excerpt}</p> */}
 			</div>

@@ -36,9 +36,9 @@ class Navbar extends React.Component {
 					<div className="collapse">
 						<ul>
 							<li><Link to="/">Home</Link> <span></span></li>
-							<li><Link to="/category/">Category</Link> <span></span></li>
+							{/* <li><Link to="/category/">Category</Link> <span></span></li>
 							<li><Link to="/about/">About</Link> <span></span></li>
-							<li><Link to="/contact/">Contact</Link> <span></span></li>
+							<li><Link to="/contact/">Contact</Link> <span></span></li> */}
 						</ul>
 					</div>
 				</div>

@@ -1,68 +1,103 @@
-
-
-
 @import "mediaQueries";
 @import "colors";
 
-.movie-cast-list{
-	padding:5%;
-    background: $secondaryNavy;
-	width:80%;
-	margin:0 auto;
-    border-radius: 5px;
-	&__header{
-		margin:0;
-		& h1{
-			margin:0;
-		}
-	}
+.image-container {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50px;
+  margin-right: 10px;
+  float: left;
 
-	&__item{
-		
-		clear: both;
-		margin-top: 10px;
+  img {
+    min-height: 50px;
+    max-width: 40px;
+	width: auto;
+	height: auto;
+  }
+}
+.movie-cast-list {
+  padding: 5%;
+  background: $secondaryNavy;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  &__header {
+	  padding:10px;
+	//   border-bottom:1px solid $lightRed;
+    margin: 0;
+    & h1 {
+	  margin: 0;
+	  font-size: 1.5em;
+	  margin-bottom: 10px;
+    }
+  }
+
+  &__item {
+    margin-top: 10px;
+	overflow: hidden;
+	padding:10px;
+
+    & .name,
+    & .character {
+      margin: 0;
+    }
+
+    & .name {
+      font-size: .9em;
+    }
+
+    & .character {
+      font-size: 0.7em;
+    }
+  }
+
+  &__body{
+	  overflow: hidden;
+  }
+
+  &__footer {
+	  margin-top:10px;
+	  padding:10px;
+	//   border-top:1px solid $lightRed;
+	  clear: both;
+    a {
+      font-weight: bold;
+      &:link,
+      &:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: $lightRed;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .movie-cast-list {
+    margin: 10px auto !important;
+	padding: 22.5px !important;
+	
+	&__item {
+		width:287px;
 		overflow: hidden;
-		
-		& img{
-			height: 50px;
-			width: auto;
-			float: left;
-			margin-right: 10px;
-			border-radius: 50px;
-		}
-		& .name, & .character{
-			margin:0;
-		}
-
-		& .name {
-			font-size: 1em;
-		}
-
-		& .character{
-			font-size: .7em;
-		}
+		float: left;
 	}
-
-	
-
-	&__footer{
-		a{
-			font-weight: bold;
-			&:link,&:visited{
-				color:#fff;
-				text-decoration: none;
-			}
-	
-			&:hover{
-				color:$lightRed;
-			}
-		}
-	}
+  }
 }
 
-@include tablet{
-	.movie-cast-list{
-		margin:10px auto!important;
-		padding:22.5px !important;
+@include desktop {
+	.movie-cast-list {
+	  margin: 10px auto !important;
+	  padding: 22.5px !important;
+	  
+	  &__item {
+		  width:236px;
+		  overflow: hidden;
+		  float: left;
+	  }
 	}
-}
+  }

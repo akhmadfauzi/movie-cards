@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovieById, fetchCredits } from '../actions';
 import '../styles/scss/movie.scss';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import MovieCasts from './MovieCasts';
 
 const mapStateToProps = (state) => {
@@ -25,7 +25,7 @@ class Movie extends Component {
 		this.getMovie();
 	}
 
-	componentWillUnmount(){
+	componentWillUnmount() {
 		this.getMovie();
 	}
 
@@ -34,28 +34,42 @@ class Movie extends Component {
 		this.props.fetchCredits(this.props.match.params.id);
 	}
 
-		showMovie(movie) {
-		const credits = this.props.creditsLoading ? <h1 style={{color:'red'}}>loading</h1> : this.props.credits.item;
+	showMovie(movie) {
+		let genres;
+		const credits = this.props.creditsLoading ? <h1 style={{ color: 'red' }}>loading</h1> : this.props.credits.item;
 		const casts = this.props.creditsLoading ? (<h1>Loading...</h1>) : <MovieCasts casts={credits.cast}></MovieCasts>;
-		
+		if (!this.props.creditsLoading) {
+			genres = movie.genres.map((v, i) => {
+				if (i == (movie.genres.length - 1)) {
+					return <span key={v.id}>{v.name}</span>
+				} else {
+					return <span key={v.id}>{v.name} / </span>
+				}
+			})
+		};
 		return (
 			<React.Fragment>
-				
 				<div className="movie__content">
-					<img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" />
 					<div className="movie__header">
 						{/* <Link to="/"><i className="fas fa-long-arrow-alt-left"></i> Back</Link> */}
-						<h1>{movie.title}</h1>
+						<div className="movie__header__jumbotron">
+							<img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" />
+						</div>
+						<div className="movie__header__text">
+							<h1>{movie.title}</h1>
+							<div className="movie__header__genres">{genres}</div>
+						</div>
+
 					</div>
 					<div className="movie__description">
-						{/* <p className="description__title">{movie.vote_average} <i className="fas fa-star"></i> </p> */}
-						<p className="description__title"><h1>Synopsis</h1></p>
+						{/* <h1>Synopsis</h1> */}
+
+						{/* <p className="description__title"></p> */}
 						<p className="description__content">{movie.overview}</p>
 					</div>
 					<div className="movie__credits">
 						{casts}
 					</div>
-					
 				</div>
 				<div className="movie__footer"></div>
 			</React.Fragment>
