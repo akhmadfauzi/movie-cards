@@ -7,7 +7,7 @@ const Footer = props => {
 			<div className="page-footer__container">
 				<div className="page-footer__header">MovieCards</div>
 				<div className="page-footer__content"></div>
-				<div className="page-footer__copyright"><span>Crafted in hurry <i className="fa fa-heart"></i></span></div>
+				<div className="page-footer__copyright"><span>Crafted with heart <i className="fa fa-heart"></i></span></div>
 			</div>
 		</footer>
 	);
