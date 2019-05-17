@@ -17,68 +17,74 @@ export const requestNowPlaying = () => ({
 
 
 export const RECEIVED_NOW_PLAYING = 'RECEIVED_NOW_PLAYING';
-export const receivedNowPlaying = (result) => ({
-	type:RECEIVED_NOW_PLAYING,
+export const receivedNowPlaying = (results) => ({
+	type: RECEIVED_NOW_PLAYING,
 	isFetching: false,
-	items: result
+	results
 })
 export const RECEIVED_MOVIE_DETAILS = 'RECEIVED_MOVIE_DETAILS';
 export const receivedMovieDetails = (result) => ({
-	type:RECEIVED_MOVIE_DETAILS,
-	isFetching:false,
+	type: RECEIVED_MOVIE_DETAILS,
+	isFetching: false,
 	movie: result
 })
 
 export const REQUEST_MOVIE_DETAILS = 'REQUEST_MOVIE_DETAILS';
 export const requestMovieDetails = () => ({
-	type:REQUEST_MOVIE_DETAILS,
-	isFetching : true
+	type: REQUEST_MOVIE_DETAILS,
+	isFetching: true
 });
 
 export const REQUEST_MOVIE_CREDITS = 'REQUEST_MOVIE_CREDITS';
 export const requestMovieCredits = () => ({
-	type:REQUEST_MOVIE_CREDITS,
-	isFetching : true
+	type: REQUEST_MOVIE_CREDITS,
+	isFetching: true
 });
 
 export const RECEIVED_MOVIE_CREDITS = 'RECEIVED_MOVIE_CREDITS';
 export const receivedMovieCredits = (credits) => ({
-	type:RECEIVED_MOVIE_CREDITS,
+	type: RECEIVED_MOVIE_CREDITS,
 	credits
 });
 
-export function fetchNowPlaying(){
-	return function(dispatch){
+export const ON_PAGE_CHANGE = 'ON_PAGE_CHANGE';
+export const onPageChange = (page) => ({
+	type: ON_PAGE_CHANGE,
+	page: parseInt(page)
+});
+
+export function fetchNowPlaying(page = 1) {
+	return function (dispatch) {
 		dispatch(requestNowPlaying());
-		const url = `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=en-US&page=1`
+		const url = `${BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=en-US&page=${page}`
 		return fetch(url)
-		.then(response=>response.json())
-		.then(result=>{
-			dispatch(receivedNowPlaying(result));
-		})
+			.then(response => response.json())
+			.then(result => {
+				dispatch(receivedNowPlaying(result));
+			})
 	}
 }
 
-export function fetchMovieById(id){
-	return function(dispatch){
+export function fetchMovieById(id) {
+	return function (dispatch) {
 		dispatch(requestMovieDetails());
 		const url = `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`;
 		return fetch(url)
-		.then(response=>response.json())
-		.then(result=>{
-			dispatch(receivedMovieDetails(result));
-		})
+			.then(response => response.json())
+			.then(result => {
+				dispatch(receivedMovieDetails(result));
+			})
 	}
 }
 
-export function fetchCredits(movieId){
-	return function(dispatch){
+export function fetchCredits(movieId) {
+	return function (dispatch) {
 		dispatch(requestMovieCredits());
 		const url = `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`;
 		return fetch(url)
-		.then(response=>response.json())
-		.then(result=>{
-			dispatch(receivedMovieCredits(result));
-		})
+			.then(response => response.json())
+			.then(result => {
+				dispatch(receivedMovieCredits(result));
+			})
 	}
 }

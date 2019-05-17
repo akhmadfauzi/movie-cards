@@ -5,12 +5,33 @@
 	margin-bottom:100px;
 	height: auto;
 	width: 100%;
+
+	&__header{
+
+		input[type="text"]{
+			padding: 4% 2.5%;
+			margin: 4% 2.5% 2% 2.5%;
+			width: 90%;
+			border: none;
+			border-radius: 5px;
+		}
+	}
 	
 	@include tablet{
 		&__content{
 			margin:0 auto;
 			width: 666px;
 			overflow: hidden;
+		}
+
+		&__header{
+			display: flex;
+			justify-content: center;
+			input[type="text"]{
+				width: 600px;
+				padding: 20px 10px;
+				margin: 20px 0 0 0;
+			}
 		}
 	}
 
@@ -19,6 +40,18 @@
 			margin:0 auto;
 			width: 960px;
 			overflow: hidden;
+		}
+
+		&__header{
+			display: flex;
+			justify-content: center;
+			input[type="text"]{
+				width: 880px;
+				padding: 10px 25px;
+				margin: 20px 0 10px 0;
+				color:rgb(109, 109, 109);
+				font-size: 30px;
+			}
 		}
 	}
 }

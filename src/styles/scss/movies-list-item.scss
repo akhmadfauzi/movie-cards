@@ -2,27 +2,11 @@
 @import "mediaQueries";
 
 .movie-item {
-	width: 50%;
-	margin: 2.5% 0;
-	float: left;
-	// height: 400px;
-	overflow: hidden !important;
-  @include tablet {
-    &:first-child {
-      margin: 0;
-    }
-
-    width: 200px;
-    padding: 10px;
-    float: left;
-    height: 350px;
-    margin: 15px 0 0 0 !important;
-  }
-
-  @include desktop {
-    width: 220px;
-    height: auto;
-  }
+  width: 50%;
+  margin: 2.5% 0;
+  float: left;
+  // height: 400px;
+  overflow: hidden !important;
 
   &__header {
     img {
@@ -38,9 +22,6 @@
   }
 
   &__content {
-    @include tablet {
-      overflow: hidden;
-    }
     background: #fff;
     height: 70px;
     width: 80%;
@@ -61,12 +42,12 @@
         &:visited {
           text-decoration: none;
           color: black;
-		}
-		
-		&:hover{
-			text-decoration: underline;
-			text-decoration-color: $lightRed;
-		}
+        }
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: $lightRed;
+        }
       }
     }
 
@@ -78,5 +59,43 @@
         color: $yellow;
       }
     }
+  }
+}
+
+@include tablet {
+  .movie-item {
+    &:first-child {
+      margin: 0;
+    }
+
+    width: 200px;
+    padding: 10px;
+    float: left;
+    height: 350px;
+    margin: 15px 0 0 0 !important;
+
+    &__content {
+      overflow: hidden;
+    }
+  }
+}
+
+@include desktop {
+  .movie-item {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 220px;
+	margin: 10px 0px!important;
+	&__content{
+		flex: 1 1 auto;
+		position: absolute;
+		bottom: 0;
+	}
+
+	&__header img{
+		position: absolute;
+		top: 0;
+	}
   }
 }

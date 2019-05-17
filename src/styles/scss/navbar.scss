@@ -10,6 +10,7 @@ $navbar-height: 70px;
   margin: 0;
   color: #fff;
   background: $secondaryNavy;
+  border-bottom: 1px solid $lightRed;
   &__content {
     min-height: $navbar-height;
     max-width: 100%;

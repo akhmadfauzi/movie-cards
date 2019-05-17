@@ -2,14 +2,13 @@ import * as act from '../actions';
 
 const initialState = {
 	nowPlaying: {
-		isFetching: false,
-		items: []
+		isFetching: false
 	},
 	movie: {
 		isFetching: false,
 		item: undefined,
 		credits: {
-			isFetching : false,
+			isFetching: false,
 			item: undefined
 		}
 	},
@@ -39,7 +38,8 @@ export default function movies(state = initialState, action) {
 			return {
 				...state,
 				nowPlaying: {
-					isFetching: action.isFetching
+					isFetching: action.isFetching,
+					...state.nowPlaying
 				}
 			}
 		case act.RECEIVED_NOW_PLAYING:
@@ -47,7 +47,16 @@ export default function movies(state = initialState, action) {
 				...state,
 				nowPlaying: {
 					isFetching: false,
-					items: [...action.items.results]
+					...action.results,
+				}
+			}
+		case act.ON_PAGE_CHANGE:
+			return {
+				...state,
+				nowPlaying: {
+					...state.nowPlaying,
+					isFetching: false,
+					page:action.page
 				}
 			}
 		case act.RECEIVED_MOVIE_DETAILS:
@@ -73,7 +82,7 @@ export default function movies(state = initialState, action) {
 				...state,
 				movie: {
 					...state.movie,
-					credits:{
+					credits: {
 						...state.credits,
 						isFetching: action.isFetching,
 					}
@@ -84,7 +93,7 @@ export default function movies(state = initialState, action) {
 				...state,
 				movie: {
 					...state.movie,
-					credits:{
+					credits: {
 						...state.credits,
 						item: action.credits,
 						isFetching: false

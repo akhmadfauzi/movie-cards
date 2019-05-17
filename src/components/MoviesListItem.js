@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import '../styles/movies-list-item.css';
+import '../styles/scss/movies-list-item.scss';
 import {Link} from 'react-router-dom';
 function mapStateToProps(state) {
 	return {
@@ -42,18 +42,17 @@ function getStar(vote) {
 const MovieListitem = (props) => {
 	const movie = props.movie;
 	const stars = getStar(movie.vote_average).length ? getStar(movie.vote_average) : 'Loading...';
-	const rating = (movie.vote_average / 2).toFixed(1);
-	// const synopsis = movie.overview;
-	// const excerpt = getExcerpt(synopsis);
+	const rating = movie.vote_average > 0 ? (<p title={rating}>{movie.vote_average}/10 <i className="fas fa-star"></i>{/*{stars}*/}</p>):(<p>N/A</p>);
+	
 	const title = movie.title.split(' ').length > 4 ? movie.title.split(' ').slice(0, 4).join(' ') + '...' : movie.title;
-
+	const poster = movie.poster_path ? `https://image.tmdb.org/t/p/w342${movie.poster_path}`: 'http://placekitten.com/g/200/300'
 	return (
 		<div className="movie-item">
 			<div className="movie-item__header">
-				<img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt={movie.title} title={movie.title} />
+				<img src={poster} alt={movie.title} title={movie.title} />
 			</div>
 			<div className="movie-item__content">
-				<p title={rating}>{movie.vote_average} <i className="fas fa-star"></i>{/*{stars}*/}</p>
+				{rating}
 				<h1 title={movie.title}><Link to={`/movie/${movie.id}`}>{title}</Link></h1>
 				{/* <p >{excerpt}</p> */}
 			</div>
