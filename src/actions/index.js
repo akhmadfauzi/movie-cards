@@ -119,7 +119,3 @@ export function searchMovies(query,page=1) {
 			});
 	}
 }
-
-function getMovie(data){
-	console.log(data);
-}
