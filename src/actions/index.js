@@ -20,7 +20,7 @@ export const RECEIVED_NOW_PLAYING = 'RECEIVED_NOW_PLAYING';
 export const receivedNowPlaying = (results) => ({
 	type: RECEIVED_NOW_PLAYING,
 	isFetching: false,
-	results
+	movies:results
 })
 export const RECEIVED_MOVIE_DETAILS = 'RECEIVED_MOVIE_DETAILS';
 export const receivedMovieDetails = (result) => ({
@@ -47,10 +47,28 @@ export const receivedMovieCredits = (credits) => ({
 	credits
 });
 
+export const REQUEST_SEARCH_MOVIES = 'REQUEST_SEARCH_MOVIES';
+export const requestSearchMovies = (query) => ({
+	type: REQUEST_SEARCH_MOVIES,
+	isFetching: true,
+	query
+});
+
+export const RECEIVED_SEARCH_MOVIES = 'RECEIVED_SEARCH_MOVIES';
+export const receivedSearchMovies = (results) => ({
+	type: RECEIVED_SEARCH_MOVIES,
+	results
+});
+
 export const ON_PAGE_CHANGE = 'ON_PAGE_CHANGE';
 export const onPageChange = (page) => ({
 	type: ON_PAGE_CHANGE,
 	page: parseInt(page)
+});
+
+export const ON_EMPTY_QUERY = 'ON_EMPTY_QUERY';
+export const onEmptyQuery = () => ({
+	type: ON_EMPTY_QUERY
 });
 
 export function fetchNowPlaying(page = 1) {
@@ -87,4 +105,21 @@ export function fetchCredits(movieId) {
 				dispatch(receivedMovieCredits(result));
 			})
 	}
+}
+
+
+export function searchMovies(query,page=1) {
+	return function (dispatch) {
+		dispatch(requestSearchMovies(query));
+		const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&page=${page}&include_adult=false`;
+		return fetch(url)
+			.then(response => response.json())
+			.then(result => {
+				dispatch(receivedSearchMovies(result));
+			});
+	}
+}
+
+function getMovie(data){
+	console.log(data);
 }

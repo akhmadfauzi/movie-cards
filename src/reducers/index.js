@@ -20,6 +20,7 @@ const initialState = {
 }
 
 export default function movies(state = initialState, action) {
+
 	switch (action.type) {
 
 		case act.TOGGLE_CLICK:
@@ -43,21 +44,28 @@ export default function movies(state = initialState, action) {
 				}
 			}
 		case act.RECEIVED_NOW_PLAYING:
+			const { page, total_results, total_pages } = action.movies
 			return {
 				...state,
 				nowPlaying: {
 					isFetching: false,
-					...action.results,
+					results: action.movies.results
+				},
+				pagination: {
+					page,
+					total_results,
+					total_pages,
+					type: act.RECEIVED_NOW_PLAYING
 				}
 			}
 		case act.ON_PAGE_CHANGE:
 			return {
 				...state,
-				nowPlaying: {
-					...state.nowPlaying,
-					isFetching: false,
-					page:action.page
+				pagination: {
+					...state.pagination,
+					page: action.page
 				}
+
 			}
 		case act.RECEIVED_MOVIE_DETAILS:
 			return {
@@ -97,6 +105,36 @@ export default function movies(state = initialState, action) {
 						...state.credits,
 						item: action.credits,
 						isFetching: false
+					}
+				}
+			}
+		case act.REQUEST_SEARCH_MOVIES:
+			return {
+				...state,
+				searchResult: {
+					...state.searchResult,
+					query: action.query
+				}
+			}
+		case act.ON_EMPTY_QUERY:
+			delete state.searchResult
+			return {
+				...state				
+			}
+		case act.RECEIVED_SEARCH_MOVIES:
+			{
+				const { page, total_results, total_pages } = action.results
+
+				return {
+					...state,
+					searchResult: {
+						...state.searchResult,
+						results: action.results
+					},
+					pagination: {
+						...state.pagination,
+						page, total_results, total_pages,
+						type: act.RECEIVED_SEARCH_MOVIES
 					}
 				}
 			}

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovieById, fetchCredits } from '../actions';
 import '../styles/scss/movie.scss';
-import { Link } from 'react-router-dom';
 import MovieCasts from './MovieCasts';
 
 const mapStateToProps = (state) => {
