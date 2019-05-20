@@ -2,22 +2,43 @@
 @import "mediaQueries";
 
 .movie-item {
+  display: flex;
+  flex: 1 1 50%;
   width: 50%;
+  flex-direction: column;
   margin: 2.5% 0;
-  float: left;
-  // height: 400px;
   overflow: hidden !important;
 
   &__header {
-    img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 200px;
       width: 90%;
-      display: block;
-      margin: 0 auto;
       border-radius: 10px 10px 0 0;
       -moz-border-radius: 10px 10px 0 0;
       -o-border-radius: 10px 10px 0 0;
       -ms-border-radius: 10px 10px 0 0;
       -webkit-border-radius: 10px 10px 0 0;
+    }
+    img {
+      width: 100%;
+      min-height: 100%;
+      height: auto;
+      flex: 1 1 auto;
+      display: block;
+      margin: 0 auto;
+      transition: width 0.3s ease-in-out;
+      &:hover {
+        width: 105%;
+        height: auto;
+      }
     }
   }
 
@@ -67,11 +88,8 @@
     &:first-child {
       margin: 0;
     }
-
-    width: 200px;
+    flex: 1 1 145px;
     padding: 10px;
-    float: left;
-    height: 350px;
     margin: 15px 0 0 0 !important;
 
     &__content {
@@ -82,20 +100,24 @@
 
 @include desktop {
   .movie-item {
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	width: 220px;
-	margin: 10px 0px!important;
-	&__content{
-		flex: 1 1 auto;
-		position: absolute;
-		bottom: 0;
-	}
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 220px;
 
-	&__header img{
-		position: absolute;
-		top: 0;
-	}
+    position: relative;
+    margin: 10px 0px !important;
+    overflow: hidden !important;
+
+    &__header {
+      a {
+        height: 300px;
+      }
+    }
+
+    &__content {
+      flex: 1 1 auto;
+
+      bottom: 0;
+    }
   }
 }

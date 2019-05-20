@@ -6,8 +6,14 @@
 	height: auto;
 	width: 100%;
 
-	&__header{
+	&__content{
+		display: flex;
+		width: 95%;
+		padding: 2.5%;
+		flex-wrap: wrap;
+	}
 
+	&__header{
 		input[type="text"]{
 			padding: 4% 2.5%;
 			margin: 4% 2.5% 2% 2.5%;
@@ -22,6 +28,8 @@
 			margin:0 auto;
 			width: 666px;
 			overflow: hidden;
+			padding: 0;
+
 		}
 
 		&__header{
@@ -29,7 +37,7 @@
 			justify-content: center;
 			input[type="text"]{
 				width: 600px;
-				padding: 20px 10px;
+				padding: 20px 15px;
 				margin: 20px 0 0 0;
 			}
 		}
@@ -40,6 +48,7 @@
 			margin:0 auto;
 			width: 960px;
 			overflow: hidden;
+			padding: 0;
 		}
 
 		&__header{
@@ -47,7 +56,7 @@
 			justify-content: center;
 			input[type="text"]{
 				width: 880px;
-				padding: 10px 25px;
+				padding: 10px 20px;
 				margin: 20px 0 10px 0;
 				color:rgb(109, 109, 109);
 				font-size: 30px;

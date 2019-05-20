@@ -17,19 +17,26 @@ const MovieCasts = (props) => {
 			</div>
 		)
 	});
-	return (
-		<div className="movie-cast-list">
-			<div className="movie-cast-list__header">
-				<h1>Cast</h1>
+
+	if (casts.length) {
+		return (
+			<div className="movie-cast-list">
+				<div className="movie-cast-list__header">
+					<h1>Cast</h1>
+				</div>
+				<div className="movie-cast-list__body">
+					{casts}
+				</div>
+				<div className="movie-cast-list__footer">
+					<Link to="/">See full cast <i className="fas fa-long-arrow-alt-right"></i></Link>
+				</div>
 			</div>
-			<div className="movie-cast-list__body">
-				{casts}
-			</div>
-			<div className="movie-cast-list__footer">
-				<Link to="/">See full cast <i className="fas fa-long-arrow-alt-right"></i></Link>
-			</div>
-		</div>
-	)
+		)
+	} else {
+		return (
+			<div></div>
+		);
+	}
 }
 
 export default MovieCasts;

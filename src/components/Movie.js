@@ -37,6 +37,7 @@ class Movie extends Component {
 		let genres;
 		const credits = this.props.creditsLoading ? <h1 style={{ color: 'red' }}>loading</h1> : this.props.credits.item;
 		const casts = this.props.creditsLoading ? (<h1>Loading...</h1>) : <MovieCasts casts={credits.cast}></MovieCasts>;
+		const poster = movie.backdrop_path ? movie.backdrop_path : movie.poster_path;
 		if (!this.props.creditsLoading) {
 			genres = movie.genres.map((v, i) => {
 				if (i == (movie.genres.length - 1)) {
@@ -52,7 +53,7 @@ class Movie extends Component {
 					<div className="movie__header">
 						{/* <Link to="/"><i className="fas fa-long-arrow-alt-left"></i> Back</Link> */}
 						<div className="movie__header__jumbotron">
-							<img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" />
+							<img src={`https://image.tmdb.org/t/p/original${poster}`} alt={movie.title} />
 						</div>
 						<div className="movie__header__text">
 							<h1>{movie.title}</h1>
