@@ -7,7 +7,8 @@ import Navbar from '../containers/Navbar';
 import Footer from '../containers/Footer';
 import MoviesList from './MoviesList';
 import Category from './Category';
-import {Route} from 'react-router-dom';
+import Search from './Search';
+import { Route, withRouter } from 'react-router-dom';
 
 class App extends Component {
 	render() {
@@ -18,6 +19,7 @@ class App extends Component {
 				<Route path="/" exact component={MoviesList}></Route>
 				<Route path="/movie/:id" component={Movie} />
 				<Route path="/category/" component={Category} />
+				<Route path="/search/:query" component={Search} />
 				<Footer></Footer>
 			</div>
 		);

@@ -28,15 +28,16 @@
       -webkit-border-radius: 10px 10px 0 0;
     }
     img {
-      width: 100%;
+	  width: 100%;
       min-height: 100%;
       height: auto;
       flex: 1 1 auto;
       display: block;
       margin: 0 auto;
-      transition: width 0.3s ease-in-out;
+      transition: width 0.2s ease-in-out;
       &:hover {
-        width: 105%;
+		width: 115%;
+		min-height: 100%;
         height: auto;
       }
     }
@@ -116,7 +117,6 @@
 
     &__content {
       flex: 1 1 auto;
-
       bottom: 0;
     }
   }

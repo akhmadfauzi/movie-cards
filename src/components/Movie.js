@@ -40,7 +40,7 @@ class Movie extends Component {
 		const poster = movie.backdrop_path ? movie.backdrop_path : movie.poster_path;
 		if (!this.props.creditsLoading) {
 			genres = movie.genres.map((v, i) => {
-				if (i == (movie.genres.length - 1)) {
+				if (i === (movie.genres.length - 1)) {
 					return <span key={v.id}>{v.name}</span>
 				} else {
 					return <span key={v.id}>{v.name} / </span>

@@ -1,6 +1,7 @@
 import '../styles/scss/movies-list.scss';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { fetchNowPlaying, onPageChange, searchMovies, onEmptyQuery } from '../actions';
 import MoviesListItem from './MoviesListItem';
 import Pagination from './Pagination';
@@ -18,27 +19,26 @@ function mapStateToProps(state) {
 }
 
 class MoviesList extends Component {
-	constructor(props) {
-		super(props)
-	}
 
 	componentDidMount() {
 		this.props.fetchNowPlaying(this.props.currentPage);
 	}
 
 	searchHandler(e) {
-		
 		const key = e.keyCode ? e.keyCode : e.charCode;
-		if (key == 13) {
+		if (key === 13) {
 			e.preventDefault();
+			
 			const query = e.target.value;
-			if(query === ''){
+			if (query === '') {
 				this.props.fetchNowPlaying(this.props.currentPage);
 				this.props.onEmptyQuery();
-			}else{
+				
+			} else {
+				// return <Redirect to ="/search/ave" />
 				this.props.searchMovies(query);
 			}
-			
+
 		}
 	}
 
@@ -58,15 +58,16 @@ class MoviesList extends Component {
 	pageChangeHandler(e) {
 		const page = e.target.dataset.pageNumber;
 		this.props.onPageChange(page);
-		if(this.props.type === 'RECEIVED_NOW_PLAYING'){
+		if (this.props.type === 'RECEIVED_NOW_PLAYING') {
 			this.props.fetchNowPlaying(page);
-		}else{
-			this.props.searchMovies(this.props.query,page)
+		} else {
+			this.props.searchMovies(this.props.query, page)
 		}
 	}
 	render() {
 		const content = this.props.loading ? (<h1>Loading...</h1>) : (this.props.query !== undefined ? this.movies(this.props.searchResults.results) : this.movies());
 
+		
 		return (
 			<div className="movies-list">
 				<div className="movies-list__header">
@@ -92,5 +93,5 @@ class MoviesList extends Component {
 }
 
 export default connect(
-	mapStateToProps, { fetchNowPlaying, onPageChange, searchMovies,onEmptyQuery }
+	mapStateToProps, { fetchNowPlaying, onPageChange, searchMovies, onEmptyQuery }
 )(MoviesList);
