@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/app.css';
+import '../styles/scss/app.scss';
 // import NowPlaying from './NowPlaying';
 // import Discover from './Discover';
 import Movie from './Movie';
